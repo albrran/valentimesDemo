@@ -1,0 +1,46 @@
+body {
+    background-color: pink;
+    text-align: center;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.h2 {
+    text-align: center;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+  
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.Yes, .No {
+    color: white;
+    border: none;
+    font-size: 20px; /* Initial font size */
+    padding: 20px;
+    border-radius: 10px;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth animation */
+}
+
+.Yes {
+    background-color: rgb(46, 219, 61);
+}
+
+.No {
+    background-color: rgb(206, 71, 71);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentimes</title>
+</head>
+
+<link rel="stylesheet" href="styles.css">
+<img id="bearImage" src="bear1.jpg" width="200" height="200">
+<h2 class="h2">Will you be my valentime?</h2>
+<div class="button-container">
+    <button class="Yes" id="yesButton">Yes</button>
+    <button class="No" id="noButton">No</button>
+</div>
+
+<script>
+    // Array of image filenames
+    const bearImages = ["bear1.jpg", "bear2.gif", "bear3.jpg", "bear4.jpg", "bear5.jpg"];
+    let currentIndex = 0; // Track current image index
+
+    document.getElementById("noButton").addEventListener("click", function() {
+        let yesButton = document.getElementById("yesButton");
+        let noButton = document.getElementById("noButton");
+        let bearImage = document.getElementById("bearImage");
+
+        // Get current sizes
+        let yesWidth = yesButton.offsetWidth;
+        let yesHeight = yesButton.offsetHeight;
+        let noWidth = noButton.offsetWidth;
+        let noHeight = noButton.offsetHeight;
+        let yesFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+        let noFontSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+
+        // Increase "Yes" button size by 10px & increase font size
+        yesButton.style.width = (yesWidth + 30) + "px";
+        yesButton.style.height = (yesHeight + 30) + "px";
+        yesButton.style.fontSize = (yesFontSize + 4) + "px";
+
+        // Decrease "No" button size by 5px & decrease font size (limit min size)
+        if (noWidth > 60 && noHeight > 30) {
+            noButton.style.width = (noWidth - 5) + "px";
+            noButton.style.height = (noHeight - 5) + "px";
+            noButton.style.fontSize = (noFontSize - 1) + "px";
+        }
+
+        // Cycle to the next image
+        currentIndex = (currentIndex + 1) % bearImages.length;
+        bearImage.src = bearImages[currentIndex]; // Update image source
+    });
+</script>
+
+
+</html>
